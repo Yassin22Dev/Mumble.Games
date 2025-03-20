@@ -189,3 +189,39 @@ a img {
 .yassin:hover {
     transform: translateY(30%) scale(1.1);
 }
+
+/* Apply text shadow for depth */
+.foreground-text, 
+.Socials, 
+.developers, 
+.ButtonGames {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Add box shadow to elements for a more 3D effect */
+.foreground-text, 
+.Socials, 
+.developers, 
+.ButtonGames {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover effect for more depth */
+.ButtonGames:hover, 
+.Socials:hover, 
+.developers:hover {
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Adjust shadow for images */
+.Socials img, 
+.yassin, 
+.sofian {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+.Socials img:hover, 
+.yassin:hover, 
+.sofian:hover {
+    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.7));
+}
