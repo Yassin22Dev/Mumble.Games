@@ -11,7 +11,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ensure items are aligned at the top */
+    align-items: flex-start;
     height: 100vh;
     text-align: center;
 }
@@ -20,16 +20,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Ensure items are aligned at the top */
+    justify-content: flex-start;
     width: 90%;
     max-width: 600px;
-    padding-top: 0; /* Add padding-top to ensure the container starts at the very top */
+    padding-top: 0;
 }
 
 .center-image {
     width: 100%;
     max-width: 300px;
-    margin-top: 0; /* Ensure the image is at the top */
+    margin-top: 0;
 }
 
 .content {
@@ -39,15 +39,36 @@ body {
 
 .background-image {
     position: absolute;
-    top: 2px; /* Set a specific top position */
+    top: 2px;
     left: 50%;
     transform: translateX(-150%) rotate(-7deg);
-    width: 130px; /* Set a specific width */
-    height: 170px; /* Set a specific height to maintain size */
+    width: 130px;
+    height: 170px;
     z-index: -2;
     max-width: 170px;
 }
 
+/* Pulsating Glow Effect for Blue Elements */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px rgba(43, 191, 229, 0.6), 0 0 10px rgba(43, 191, 229, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(43, 191, 229, 0.7), 0 0 15px rgba(43, 191, 229, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(43, 191, 229, 0.6), 0 0 10px rgba(43, 191, 229, 0.4);
+    }
+}
+
+/* Apply the subtle glow effect */
+.foreground-text, 
+.Socials, 
+.developers {
+    animation: glowing 1.5s infinite alternate;
+}
+
+/* Apply the glow effect */
 .foreground-text {
     background-color: #2bbfe5;
     border-radius: 10px;
@@ -58,7 +79,28 @@ body {
     z-index: 5;
     margin: 20px auto;
     transform: translateY(100%);
-    position: relative; /* Add this line */
+    position: relative;
+    animation: glowing 1.5s infinite alternate;
+}
+
+.Socials {
+    transform: translateY(160%);
+    color: black;
+    background-color: #2da9c8;
+    font-size: 25px;
+    border-radius: 10px;
+    width: 100%;
+    animation: glowing 1.5s infinite alternate;
+}
+
+.developers {
+    transform: translateY(-20%);
+    color: black;
+    background-color: #2da9c8;
+    font-size: 25px;
+    border-radius: 10px;
+    width: 100%;
+    animation: glowing 1.5s infinite alternate;
 }
 
 .ButtonGames {
@@ -81,17 +123,8 @@ body {
     transform: translateY(275%) scale(1.1);
 }
 
-.Socials {
-    transform: translateY(160%);
-    color: black;
-    background-color: #2da9c8;
-    font-size: 25px;
-    border-radius: 10px;
-    width: 100%;
-}
-
 .Socials img {
-    margin-right: 15px; /* Adjust the value as needed */
+    margin-right: 15px;
     transition: transform 0.3s ease;
     border: none;
     cursor: pointer;
@@ -102,15 +135,6 @@ body {
     transform: scale(1.1);
 }
 
-.developers {
-    transform: translateY(-20%);
-    color: black;
-    background-color: #2da9c8;
-    font-size: 25px;
-    border-radius: 10px;
-    width: 100%;
-}
-
 .Nerdo {
     transform: translateY(100%)
     translateX(50%)
@@ -119,18 +143,18 @@ body {
 .Finger {
     transform: translateY(10%)
     translateX(50%);
-    animation: moveUpDown 2s infinite; /* Adjust the duration as needed */
+    animation: moveUpDown 2s infinite;
 }
 
 a {
-    text-decoration: none; /* Remove underline from links */
-    border: none; /* Remove border from links */
-    outline: none; /* Remove outline from links */
+    text-decoration: none;
+    border: none;
+    outline: none;
 }
 
 a img {
-    border: none; /* Remove border from images inside links */
-    outline: none; /* Remove outline from images inside links */
+    border: none;
+    outline: none;
 }
 
 @keyframes moveUpDown {
@@ -138,7 +162,7 @@ a img {
         transform: translateY(10) translateX(50%);
     }
     50% {
-        transform: translateY(-10px) translateX(50%); /* Adjust the value as needed */
+        transform: translateY(-10px) translateX(50%);
     }
 }
 
